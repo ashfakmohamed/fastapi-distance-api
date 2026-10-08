@@ -1,6 +1,8 @@
 # FastAPI Distance API
 
-A small FastAPI service that accepts two latitude/longitude pairs and returns the calculated distance.
+[![FastAPI CI](https://github.com/ashfakmohamed/fastapi-distance-api/actions/workflows/ci.yml/badge.svg)](https://github.com/ashfakmohamed/fastapi-distance-api/actions/workflows/ci.yml)
+
+A FastAPI service that accepts two latitude/longitude pairs and returns their great-circle distance in kilometers using the haversine formula.
 
 ## Run locally
 
@@ -17,6 +19,15 @@ Open `http://127.0.0.1:8000/docs` for the interactive API documentation.
 
 ```text
 GET /distance/?lat1=40.7128&lon1=-74.0060&lat2=34.0522&lon2=-118.2437
+```
+
+The API validates latitude and longitude ranges and exposes an OpenAPI schema at `/docs`.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest
 ```
 
 ## Repository hygiene
